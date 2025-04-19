@@ -2,6 +2,7 @@
 @import 'global.css';
 @import 'contentControll.css';
 @import 'animeContainer.css';
+@import 'animeHeader.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
@@ -17,4 +18,8 @@
     --border5: 0.313rem;
     --border10: 0.625rem;
     --border15: 0.938;
+}
+
+.inative {
+    display: none !important;
 }
