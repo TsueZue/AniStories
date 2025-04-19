@@ -27,6 +27,7 @@
 .poster {
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 
 }
 
@@ -42,4 +43,27 @@
     box-sizing: border-box;
     border-radius: var(--border10);
     margin-top: 20px;
+}
+
+.star {
+    display: flex;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.genres ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    color: var(--textOn);
+    font-size: 14px;
+    width: 150px;
+    margin-left: 15px;
+    margin-top: 10pxg;
+}
+
+.genres li {
+    background-color: var(--bgColor);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
