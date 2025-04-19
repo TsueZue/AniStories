@@ -1,7 +1,3 @@
-const randomBtn = document.querySelector('.random')
-const main = document.querySelector('main')
-const animePage = document.querySelector('.animePage')
-
 const arrowbackBtn = document.querySelector('.arrowBack')
 
 randomBtn.addEventListener('click', function() {

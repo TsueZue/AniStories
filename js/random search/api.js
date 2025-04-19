@@ -1,3 +1,25 @@
+const main = document.querySelector('main')
+const animePage = document.querySelector('.animePage')
+
+const randomBtn = document.querySelector('.random')
+const arrowbackBtn = document.querySelector('.arrowBack')
+
+randomBtn.addEventListener('click', function() {
+
+    main.classList.add('inative')
+    animePage.classList.remove('inative')
+    
+})
+
+arrowbackBtn.addEventListener('click', () => {
+    main.classList.toggle('inative')
+    animePage.classList.toggle('inative')
+})
+
+
+
+
+
 const animeUrl = await fetch('https://api.jikan.moe/v4/random/anime')
 const animeJson = await animeUrl.json()
 const animeData = animeJson.data
@@ -48,3 +70,5 @@ if(year.textContent = "null"){
 }
 
 season.textContent = animeData.status
+
+

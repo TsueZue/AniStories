@@ -1,10 +1,29 @@
-body {
-    background-color: var(--bgColor);
-    padding: 0.93rem;
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    
+@import 'main/header.css';
+@import 'main/main.css';
+
+@import 'animeContent/animeContainer.css';
+@import 'animeContent/contentControll.css';
+@import 'animeContent/animeHeader.css';
+@import 'animeContent/animePoster.css';
+@import 'animeContent/animeFilter.css';
+@import 'animeContent/animeGenres.css';
+@import 'animeContent/animeBtn.css';
+@import 'animeContent/animeText.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+:root {
+    --bgColor: #131321;
+    --accent: #1F1F36;
+
+    --mainColor: #907ECB;
+
+    --textOn: #8D8D98;
+    --textOff: #A9A9B1;
+
+    --border5: 0.313rem;
+    --border10: 0.625rem;
+    --border15: 0.938;
 }
 
 a, ul, li {
@@ -19,4 +38,7 @@ a, ul, li {
     font-weight: 400;
     font-style: normal;
   }
-  
+
+.inative {
+    display: none !important;
+}

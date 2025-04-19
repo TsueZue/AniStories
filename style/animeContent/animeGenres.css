@@ -1,0 +1,19 @@
+.genres ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    color: var(--textOn);
+    font-size: 12px;
+    width: 270px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.genres li {
+    background-color: var(--bgColor);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

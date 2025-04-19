@@ -1,0 +1,10 @@
+.animeContainer {
+    padding: 15px;
+    box-sizing: border-box;
+
+    background-color: var(--accent);
+    border-radius: var(--border10);
+    height: 200px;
+    font-size: 14px;
+}
+

@@ -1,0 +1,21 @@
+.container {
+    background-color: var(--accent);
+    padding: 20px 5px;
+    box-sizing: border-box;
+    border-radius: var(--border10);
+    margin-top: 20px;
+}
+
+.poster {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.animePoster {
+    max-width: 90%;
+    min-width: 90%;
+    height: 80%;
+    border-radius: var(--border10);
+
+}

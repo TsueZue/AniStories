@@ -1,0 +1,6 @@
+.description {
+    margin-left: 15px;
+    display: block;
+    max-width: 320px;
+    color: var(--textOn);
+}

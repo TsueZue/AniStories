@@ -1,0 +1,22 @@
+.buttons {
+    display: flex;
+    padding: 0.313rem;
+    border-radius: var(--border10);
+    background-color: var(--bgColor);
+
+    width: 1.87rem;
+    height: 1.87rem;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons img {
+    width: 0.95rem;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+    margin-right: 15px;
+}
