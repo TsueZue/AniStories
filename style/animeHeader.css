@@ -56,14 +56,40 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
     color: var(--textOn);
-    font-size: 14px;
+    font-size: 12px;
     width: 150px;
     margin-left: 15px;
-    margin-top: 10pxg;
+    margin-top: 15px;
+    position: relative;
 }
 
 .genres li {
     background-color: var(--bgColor);
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    padding: 0.313rem;
+    border-radius: var(--border10);
+    background-color: var(--bgColor);
+
+    width: 1.87rem;
+    height: 1.87rem;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons img {
+    width: 1.25rem;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: -35px;
+    right: 45px;
 }
