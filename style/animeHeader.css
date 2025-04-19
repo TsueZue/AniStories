@@ -27,7 +27,6 @@
 .poster {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 
 }
 
@@ -37,3 +36,10 @@
     border-radius: var(--border10);
 }
 
+.container {
+    background-color: var(--accent);
+    padding: 20px 5px;
+    box-sizing: border-box;
+    border-radius: var(--border10);
+    margin-top: 20px;
+}
