@@ -22,3 +22,18 @@
     width: 1.25rem;
 }
 
+
+
+.poster {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.animePoster {
+    max-width: 90%;
+    height: 80%;
+    border-radius: var(--border10);
+}
+
