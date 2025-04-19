@@ -1,0 +1,22 @@
+body {
+    background-color: var(--bgColor);
+    padding: 0.93rem;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+a, ul, li {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

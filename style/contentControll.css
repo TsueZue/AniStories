@@ -1,0 +1,24 @@
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    margin-bottom: 3.12rem;
+}
+
+nav ul li {
+    background-color: var(--accent);
+    height: 3.12rem;
+    border-radius: var(--border10);
+
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--textOn);
+    font-size: 0.75rem;
+    color: var(--mainColor);
+}
