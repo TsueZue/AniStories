@@ -57,7 +57,6 @@ randomBtn.addEventListener('click', async function () {
       const trailer = document.querySelector('.trailer')
       if (animeData.trailer && animeData.trailer.url) {
           trailer.href = animeData.trailer.url
-          trailerBtn.style.display = "inline"
       } else {
           trailer.href = "#"
           trailerBtn.style.display = "none"
