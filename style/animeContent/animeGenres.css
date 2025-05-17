@@ -1,5 +1,5 @@
 .genres ul {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     color: var(--textOn);
