@@ -67,8 +67,8 @@ randomBtn.addEventListener('click', async function () {
 })
 
 arrowbackBtn.addEventListener('click', () => {
-    main.classList.toggle('inative')
-    animePage.classList.toggle('inative')
+  main.classList.remove('inative')
+  animePage.classList.add('inative')
 })
 
 // Service Worker
