@@ -16,7 +16,7 @@ arrowbackBtn.addEventListener('click', () => {
 })
 
 
-const animeUrl = await fetch('https://api.jikan.moe/v4/anime/50738')
+const animeUrl = await fetch('https://api.jikan.moe/v4/random/anime')
 const animeJson = await animeUrl.json()
 const animeData = animeJson.data
 
