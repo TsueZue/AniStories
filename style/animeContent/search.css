@@ -24,3 +24,35 @@ input {
     background-color: var(--accent);
     color: var(--textOn);
 }
+
+.container {
+    background-color: var(--accent);
+    padding: 20px 5px;
+    box-sizing: border-box;
+    border-radius: var(--border10);
+    margin-top: 20px;
+    height: 100%;
+}
+
+.capaanime {
+    width: 100px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    border-radius: var(--border10);
+    margin-left: 15px;
+}
+
+.animeitem {
+    display: flex;
+    gap: 20px;
+}
+
+.genresearch {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.genresearch li {
+    margin-bottom: 10px;
+}
