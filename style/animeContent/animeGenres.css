@@ -6,6 +6,7 @@
     font-size: 12px;
     margin-left: 15px;
     margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .genres li {
