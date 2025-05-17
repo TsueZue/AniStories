@@ -10,7 +10,7 @@ randomBtn.addEventListener('click', async function () {
 
   try {
       // Sorteia uma página de 1 a 10 (top 500 animes, 50 por página)
-      const randomPage = Math.floor(Math.random() * 10) + 1
+      const randomPage = Math.floor(Math.random() * 20) + 1
       const response = await fetch(`https://api.jikan.moe/v4/top/anime?page=${randomPage}`)
       const json = await response.json()
       const results = json.data

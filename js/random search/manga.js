@@ -10,7 +10,8 @@ manga.addEventListener('click', async function () {
 
     // Chamada da API DENTRO do clique
     try {
-        const response = await fetch("https://api.jikan.moe/v4/random/manga")
+        const randomPage = Math.floor(Math.random() * 20) + 1
+        const response = await fetch(`https://api.jikan.moe/v4/top/manga?page=${randomPage}`)
         const json = await response.json()
         const mangaData = json.data
 
