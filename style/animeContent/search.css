@@ -1,0 +1,26 @@
+.searchHeader {
+    display: flex;
+        gap: 10px;
+        align-items: center;
+}
+
+.searchback {
+        display: flex;
+        padding: 0.313rem;
+        border-radius: var(--border10);
+        background-color: var(--accent);
+        width: 1.87rem;
+        height: 1.87rem;
+        align-items: center;
+        justify-content: center;
+}
+
+input {
+    all: unset;
+    padding: 0.313rem;
+    height: 1.87rem;
+    width: 100%;
+    border-radius: var(--border10);
+    background-color: var(--accent);
+    color: var(--textOn);
+}

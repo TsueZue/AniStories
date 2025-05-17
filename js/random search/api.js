@@ -4,6 +4,21 @@ const animePage = document.querySelector('.animePage')
 const randomBtn = document.querySelector('.random')
 const arrowbackBtn = document.querySelector('.arrowBack')
 
+const searchPage = document.querySelector('.search')
+const searchButton = document.querySelector('.searchButton')
+const searchback = document.querySelector('.searchback')
+
+searchButton.addEventListener('click', () => {
+  searchPage.classList.toggle('inative')
+  main.classList.add('inative')
+  animePage.classList.add('inative')
+})
+
+searchback.addEventListener('click', () => {
+  searchPage.classList.add('inative')
+  main.classList.remove('inative')
+})
+
 randomBtn.addEventListener('click', async function () {
   main.classList.add('inative')
   animePage.classList.remove('inative')
@@ -82,3 +97,7 @@ if ('serviceWorker' in navigator) {
         .then(() => console.log('Service Worker registrado!'))
         .catch((error) => console.error('Erro ao registrar o SW:', error));
 }
+
+
+
+///////////////////////////////
