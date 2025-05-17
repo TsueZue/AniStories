@@ -20,7 +20,6 @@ const animeUrl = await fetch('https://api.jikan.moe/v4/random/anime')
 const animeJson = await animeUrl.json()
 const animeData = animeJson.data
 
-
 const animeTitle = document.querySelector('.title')
 const animePoster = document.querySelector('.animePoster')
 
@@ -62,6 +61,12 @@ const trailer = document.querySelector('.trailer')
 
 trailer.href = animeData.trailer.url;
 console.log(trailer)
+
+
+const sinopse = document.querySelector('.description')
+
+sinopse.innerText = animeData.synopsis
+
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js')
