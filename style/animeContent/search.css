@@ -25,20 +25,19 @@ input {
     color: var(--textOn);
 }
 
-.container {
+.containerr {
     background-color: var(--accent);
     padding: 20px 5px;
     box-sizing: border-box;
     border-radius: var(--border10);
     margin-top: 20px;
-    height: 100%;
+    min-height: 500px;
 }
 
 .capaanime {
     width: 100px;
     height: 150px;
     background-color: white;
-    display: flex;
     border-radius: var(--border10);
     margin-left: 15px;
 }

@@ -106,6 +106,7 @@ const input = document.querySelector('.searchinput')
 
 const imgsearch = document.querySelector('.imgcapa')
 const textsearch = document.querySelector('.titles')
+let animecont = document.querySelector('.containerr')
 
 input.addEventListener('keydown', async (event) => {
 
@@ -113,16 +114,41 @@ input.addEventListener('keydown', async (event) => {
 
   if (event.key === 'Enter') {
   
-      console.log('clicou')
+ 
 
     try {
       let animeUrl = await fetch(`https://api.jikan.moe/v4/anime?q=${valor}`)
       let animeJson = await animeUrl.json()
       let animeDados = animeJson.data
 
-      imgsearch.src = animeDados[0].images.jpg.image_url
-      textsearch.textContent = animeDados[0].title
 
+      for(let i = 0; i < animeDados.length; i++) {
+
+        let animeitem = document.createElement("div")
+        animeitem.classList.add("animeitem")
+
+        let animespan = document.createElement("span")
+        let animecapa = document.createElement("img")
+
+        animecapa.classList.add("capaanime")
+
+        let animespan2 = document.createElement("span")
+        animespan2.classList.add("animecontainer")
+
+        let animetext = document.createElement("p")
+        animetext.classList.add("titles")
+
+        animecont.appendChild(animeitem)
+        animeitem.appendChild(animespan)
+        animespan.appendChild(animecapa)
+        animeitem.appendChild(animespan2)
+        animespan2.appendChild(animetext)
+
+
+        animecapa.src = animeDados[i].images.jpg.image_url
+        animetext.textContent = animeDados[i].title
+
+      }
 
     } catch(error) {
       console.log(error)
