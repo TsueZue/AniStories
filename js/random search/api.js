@@ -101,3 +101,36 @@ if ('serviceWorker' in navigator) {
 
 
 ///////////////////////////////
+
+const input = document.querySelector('.searchinput')
+
+const imgsearch = document.querySelector('.imgcapa')
+const textsearch = document.querySelector('.titles')
+
+input.addEventListener('keydown', async (event) => {
+
+  const valor = input.value 
+
+  if (event.key === 'Enter') {
+  
+      console.log('clicou')
+
+    try {
+      let animeUrl = await fetch(`https://api.jikan.moe/v4/anime?q=${valor}`)
+      let animeJson = await animeUrl.json()
+      let animeDados = animeJson.data
+
+      imgsearch.src = animeDados[0].images.jpg.image_url
+      textsearch.textContent = animeDados[0].title
+
+
+    } catch(error) {
+      console.log(error)
+    }
+
+
+
+  } 
+   
+  })
+
