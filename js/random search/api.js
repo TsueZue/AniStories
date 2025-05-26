@@ -138,15 +138,19 @@ input.addEventListener('keydown', async (event) => {
         let animetext = document.createElement("p")
         animetext.classList.add("titles")
 
+        let animetext2 = document.createElement("p")
+        animetext2.classList.add("sinopse")
+
         animecont.appendChild(animeitem)
         animeitem.appendChild(animespan)
         animespan.appendChild(animecapa)
         animeitem.appendChild(animespan2)
         animespan2.appendChild(animetext)
-
+        animespan2.appendChild(animetext2)
 
         animecapa.src = animeDados[i].images.jpg.image_url
         animetext.textContent = animeDados[i].title
+        animetext2.textContent = animeDados[i].synopsis.slice(0, 210)
 
       }
 
