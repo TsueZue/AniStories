@@ -121,6 +121,8 @@ input.addEventListener('keydown', async (event) => {
       let animeJson = await animeUrl.json()
       let animeDados = animeJson.data
 
+      animecont.innerHTML = ""
+
 
       for(let i = 0; i < animeDados.length; i++) {
 

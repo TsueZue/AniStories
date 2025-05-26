@@ -31,11 +31,12 @@ input {
     box-sizing: border-box;
     border-radius: var(--border10);
     margin-top: 20px;
-    height: 100vh;
+    height: 100%
 }
 
 .capaanime {
     width: 100px;
+    min-height: 150px;
     background-color: white;
     border-radius: var(--border10);
     margin-left: 15px;
