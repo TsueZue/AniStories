@@ -23,6 +23,7 @@ input {
     border-radius: var(--border10);
     background-color: var(--accent);
     color: var(--textOn);
+    padding-left: 10px;
 }
 
 .containerr {
@@ -71,13 +72,16 @@ input {
     background-color: #c3c3c32c;
     position: absolute;
     bottom: -10px;
-    padding-left: 20px;
 }
 
 input::placeholder {
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .sinopse {
     color: var(--textOff);
+}
+
+.inactive {
+    display: none;
 }

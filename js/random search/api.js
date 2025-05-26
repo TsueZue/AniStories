@@ -17,6 +17,7 @@ searchButton.addEventListener('click', () => {
 searchback.addEventListener('click', () => {
   searchPage.classList.add('inative')
   main.classList.remove('inative')
+  animecont.innerHTML = ""
 })
 
 randomBtn.addEventListener('click', async function () {
@@ -125,6 +126,8 @@ input.addEventListener('keydown', async (event) => {
 
 
       for(let i = 0; i < animeDados.length; i++) {
+
+        animecont.classList.remove('inactive')
 
         let animeitem = document.createElement("div")
         animeitem.classList.add("animeitem")
