@@ -20,6 +20,20 @@ searchback.addEventListener('click', () => {
   animecont.innerHTML = ""
 })
 
+const animePoster = document.querySelector('.animePoster')
+const animeTitle = document.querySelector('.title')
+const genre1 = document.querySelector('.g1')
+const genre2 = document.querySelector('.g2')
+const genre3 = document.querySelector('.g3')
+const genreElements = [genre1, genre2, genre3]
+const year = document.querySelector('.year')
+const season = document.querySelector('.seasons')
+const trailerBtn = document.querySelector('.trailerbtn')
+const trailer = document.querySelector('.trailera')
+const sinopse = document.querySelector('.description')
+
+
+
 randomBtn.addEventListener('click', async function () {
   main.classList.add('inative')
   animePage.classList.remove('inative')
@@ -36,8 +50,7 @@ randomBtn.addEventListener('click', async function () {
       const animeData = results[randomIndex]
 
       // Título e imagem
-      const animeTitle = document.querySelector('.title')
-      const animePoster = document.querySelector('.animePoster')
+      var animeTitle = document.querySelector('.title')
       animeTitle.textContent = animeData.title
       animePoster.src = animeData.images.webp.image_url
 
@@ -70,7 +83,7 @@ randomBtn.addEventListener('click', async function () {
 
       // Trailer
       const trailerBtn = document.querySelector('.trailerbtn')
-      const trailer = document.querySelector('.trailer')
+      const trailer = document.querySelector('.trailera')
       if (animeData.trailer && animeData.trailer.url) {
           trailer.href = animeData.trailer.url
       } else {
@@ -157,12 +170,54 @@ input.addEventListener('keydown', async (event) => {
         animetext.textContent = animeDados[i].title
         animetext2.textContent = animeDados[i].synopsis.slice(0, 210)
 
+        animeitem.addEventListener('click', () => {
+          searchPage.classList.add('inative')
+          animePage.classList.remove('inative')
+        
+          animeTitle.textContent = animeDados[i].title
+          animePoster.src = animeDados[i].images.webp.image_url
+          sinopse.innerText = animeDados[i].synopsis || "Sinopse não disponível."
+        
+          // Gêneros
+          for (let j = 0; j < genreElements.length; j++) {
+            if (j < animeDados[i].genres.length) {
+              genreElements[j].textContent = animeDados[i].genres[j].name
+              genreElements[j].style.display = "inline"
+            } else {
+              genreElements[j].style.display = "none"
+            }
+          }
+        
+          // Ano e status
+          if (animeDados[i].year === null) {
+            year.style.display = "none"
+          } else {
+            year.textContent = animeDados[i].year
+            year.style.display = "inline"
+          }
+        
+          season.textContent = animeDados[i].status
+        
+          // Trailer
+          if (animeDados[i].trailer && animeDados[i].trailer.url) {
+            trailer.href = animeDados[i].trailer.url
+            trailerBtn.style.display = "inline"
+          } else {
+            trailer.href = "#"
+            trailerBtn.style.display = "none"
+          }
+        
+        })
+        
+
       }
+
+
+
 
     } catch(error) {
       console.log(error)
     }
-
 
 
   } 
