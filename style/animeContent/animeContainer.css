@@ -8,3 +8,15 @@
     font-size: 14px;
 }
 
+.anime-items {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.anime-items img {
+    height: 130px;
+    width: 100px;
+    border-radius: 10px;
+}

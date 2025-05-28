@@ -8,6 +8,9 @@ const searchPage = document.querySelector('.search')
 const searchButton = document.querySelector('.searchButton')
 const searchback = document.querySelector('.searchback')
 
+const favbtn = document.querySelector('.heart')
+let anime = null
+
 searchButton.addEventListener('click', () => {
   searchPage.classList.toggle('inative')
   main.classList.add('inative')
@@ -54,6 +57,17 @@ randomBtn.addEventListener('click', async function () {
       animeTitle.textContent = animeData.title
       animePoster.src = animeData.images.webp.image_url
 
+      anime = {
+        nome: animeData.title,
+        src: animeData.images.webp.image_url,
+        sinopse: animeData.synopsis,
+        genero: animeData.genres.map(g => g.name),
+        ano: animeData.year,
+        status: animeData.status,
+        trailer: animeData.trailer?.url
+      }
+      
+
       // Gêneros
       const genre1 = document.querySelector('.g1')
       const genre2 = document.querySelector('.g2')
@@ -95,10 +109,83 @@ randomBtn.addEventListener('click', async function () {
       const sinopse = document.querySelector('.description')
       sinopse.innerText = animeData.synopsis || "Sinopse não disponível."
 
+      let favoritos = JSON.parse(localStorage.getItem('favoritos')) || []
+
+
+
+
   } catch (error) {
       console.error("Erro ao carregar o anime:", error)
   }
 })
+
+let animeitems = document.querySelector('.anime-items')
+
+favbtn.addEventListener('click', () => {
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || []
+  favoritos.push(anime)
+  localStorage.setItem('favoritos', JSON.stringify(favoritos))
+})
+
+function exibirfav() {
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || []
+
+  favoritos.forEach(item => {
+      
+      const img = document.createElement('img')
+      const p = document.createElement('p')
+
+      img.src = item.src
+      p.innerText = item.nome
+
+      animeitems.appendChild(img)
+
+      img.addEventListener('click', () => {
+        main.classList.add('inative')
+        animePage.classList.remove('inative')
+
+        // Atualiza os dados da página com as informações completas
+        animeTitle.textContent = item.nome
+        animePoster.src = item.src
+
+        // Gêneros (supondo que você tem 3 elementos .g1, .g2, .g3)
+        const genreElements = [genre1, genre2, genre3]
+        for (let i = 0; i < genreElements.length; i++) {
+          if (item.genero && i < item.genero.length) {
+            genreElements[i].textContent = item.genero[i]
+            genreElements[i].style.display = "inline"
+          } else {
+            genreElements[i].style.display = "none"
+          }
+        }
+
+        // Ano e status
+        if (!item.ano) {
+          year.style.display = "none"
+        } else {
+          year.textContent = item.ano
+          year.style.display = "inline"
+        }
+        season.textContent = item.status || ""
+
+        // Trailer
+        if (item.trailer) {
+          trailer.href = item.trailer
+          trailerBtn.style.display = "inline"
+        } else {
+          trailer.href = "#"
+          trailerBtn.style.display = "none"
+        }
+
+        // Sinopse
+        sinopse.innerText = item.sinopse || "Sinopse não disponível."
+      })
+  })
+}
+
+exibirfav()
+
+
 
 arrowbackBtn.addEventListener('click', () => {
   main.classList.remove('inative')
